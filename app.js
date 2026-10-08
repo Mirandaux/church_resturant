@@ -1,0 +1,7 @@
+const dialog=document.querySelector('#booking');
+document.querySelectorAll('[data-book]').forEach(button=>button.addEventListener('click',()=>dialog.showModal()));
+document.querySelector('.close').addEventListener('click',()=>dialog.close());
+dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
+const date=document.querySelector('#date');const today=new Date();date.min=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+document.querySelector('#booking-form').addEventListener('submit',event=>{event.preventDefault();const data=new FormData(event.target);const message=document.querySelector('#confirmation');message.textContent=`${data.get('name')}, ecco la tua richiesta per ${data.get('guests').toLowerCase()} il ${new Date(data.get('date')+'T12:00:00').toLocaleDateString('it-IT')}. È una dimostrazione: il tavolo non è stato prenotato. Per confermare servirà collegare il servizio di prenotazione del ristorante.`;message.hidden=false;event.target.hidden=true;});
+document.querySelector('#menu-button').addEventListener('click',event=>{const menu=document.querySelector('#menu');menu.hidden=!menu.hidden;event.currentTarget.setAttribute('aria-expanded',String(!menu.hidden));});
