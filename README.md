@@ -28,3 +28,9 @@ Booking and menu content are demonstrations. The form does not send reservations
 User-provided restaurant photographs inform atmosphere and material treatment only; they are not hosted or reproduced. Generated imagery depicts an original imagined Santa Cecilia.
 
 Earlier research consulted [Bruno Simon's Folio 2019](https://github.com/brunosimon/folio-2019), especially its README and scene structure. Awwwards and the live reference website returned HTTP 403. No reference code or assets were copied.
+
+## Accessibility
+
+Body copy uses 18px text with generous line spacing. Cinematic text remains fully opaque on a dark reading surface; no scroll-driven text fade or sticky reading deadline is used. Controls provide at least 44px targets, a visible keyboard focus, a skip-to-content link, labelled dialogs and form fields, and focus on the result after submitting the demonstration form. Reduced-motion mode removes ambient animation, camera transforms tied to scroll, interpolation and smooth scrolling; the scene switches between still images.
+
+This iteration was checked with axe-core 4.10.3 against WCAG 2 A/AA, 2.1 AA and 2.2 AA rules on desktop, mobile and the booking dialog: no automated violations found. Manual browser checks covered keyboard navigation, Escape to close dialogs, reflow at 320px and a narrow/short viewport, opaque text through scrolling and reduced-motion behavior. These checks are not a complete WCAG conformance certification.
